@@ -182,7 +182,7 @@ if (!empty($topic['Poll']['id'])) { ?>
 </div>
 
 <?php // Quick Reply
-if ($cupcake->settings['enable_quick_reply'] == 1) { ?>
+if ($cupcake->settings['enable_quick_reply'] == 1 && $cupcake->hasAccess($topic['ForumCategory']['accessReply'])) { ?>
 <div id="quickReply">
 	<h3><?php __d('forum', 'Quick Reply'); ?></h3>
     
