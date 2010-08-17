@@ -46,7 +46,7 @@ class ToolbarComponent extends Object {
 			if (!$this->Session->check('Forum.access')) {
 				$access = array('Guest' => 0);
 
-				if ($user_id) {
+				if ($user_id && $this->Controller->Auth->user('status') == User::STATUS_ACTIVE) {
 					$access['Member'] = 1;
 					$access = array_merge($access, ClassRegistry::init('Forum.Access')->getMyAccess($user_id));
 				}
