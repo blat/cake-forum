@@ -66,7 +66,8 @@ class PostsController extends ForumAppController {
 			$quote = $this->Post->getQuote($quote_id);
 			
 			if (!empty($quote)) {
-				$this->data['Post']['content'] = '[quote="'. $quote['User']['username'] .'" date="'. $quote['Post']['created'] .'"]'. $quote['Post']['content'] .'[/quote]';
+				$content = preg_replace('/\[quote.*\](\n|.)*\[\/quote\]/', '', $quote['Post']['content']);
+				$this->data['Post']['content'] = '[quote="'. $quote['User']['username'] .'" date="'. $quote['Post']['created'] .'"]'. $content .'[/quote]';
 			}
 		}
 		
