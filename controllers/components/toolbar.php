@@ -39,7 +39,7 @@ class ToolbarComponent extends Object {
 	 * @return void
 	 */
 	public function initForum() {
-		if (!$this->Session->check('Forum.isBrowsing')) {
+//		if (!$this->Session->check('Forum.isBrowsing')) {
 			$user_id = $this->Controller->Auth->user('id');
 
 			// How much access we have?
@@ -78,8 +78,8 @@ class ToolbarComponent extends Object {
 				$this->Session->write('Forum.isAdmin', $status);
 			}
 
-			$this->Session->write('Forum.isBrowsing', true);
-		}
+//			$this->Session->write('Forum.isBrowsing', true);
+//		}
 	}
 	
 	/**
